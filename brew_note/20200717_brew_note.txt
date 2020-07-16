@@ -1,0 +1,31 @@
+1. 使用方式：
+    a. ### Homebrew 套件安裝 ###
+    --> brew install [套件名稱_1] [套件名稱_2] [套件名稱_N]
+    --> EX: brew install vim git       # 安裝 vim, git
+    
+    b. ### Homebrew 套件移除 ###
+    --> brew uninstall [套件名稱_1] [套件名稱_2] [套件名稱_N]
+    --> EX: brew uninstall vim git     # 移除 vim, git
+
+    c. ### Homebrew 套件搜尋 ###
+    --> brew search [套件名稱]
+    --> EX: brew search git            # 搜尋 git 相關套件﹙只要符合 git 文字就會顯示﹚
+
+    d. ### 查看已安裝的套件清單 ###
+    --> brew list
+
+    e. ### Homebrew 更新 ###
+    --> brew update
+
+    f. ### Homebrew 套件更新 ###
+    --> brew upgrade [套件名稱_1] [套件名稱_2] [套件名稱_N]
+    --> brew upgrade vim git           # 更新套件 vim, git
+ 
+   g. # 更新所有安裝套件
+    --> brew upgrade
+
+
+    h. ### 刪除安裝的暫存檔 ###
+    --> brew cleanup
+
+2. other
