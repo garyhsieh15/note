@@ -58,7 +58,11 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
     
     b. 切換至指定工作環境
     --> conda/source activate [env_name]
-    --> EX: conda/source activate py36
+     --> EX: source activate py36
+     --> EX: conda activate py36
+     
+     b-1. 切換至base工作環境
+--> conda deactivate  
 
     c. 看安裝幾個虛擬環境
     --> EX: conda env list
@@ -69,5 +73,11 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
 
     e. continue
     
-3. other
+3. 匯出開發環境 & 匯入開發環境
+     a. 將工作環境的設定匯出為 *.yml 檔案
+     --> conda env export –-name env_name –-file export_env_name.yml
+     --> EX: conda env export –-name py36 –-file env_py36.yml
+     b. 將匯入工作環境
+     --> conda env create --name cloned_py36.yml --file env_py36.yml
+4. other
 
