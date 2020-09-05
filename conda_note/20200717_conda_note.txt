@@ -1,20 +1,23 @@
-﻿
+﻿Conda operator manual
 
 conda命令是管理在安裝不同package時的主要介面，使用conda時，
 你可以進行建立(create)、輸出(export)、列表(list)、移除(remove)和
 更新(update)環境於不同Python版本及Packages，同時也可以分享你的虛擬環境。
 接下來筆者將針對conda如何建立及管理虛擬環境。
 
+若主要的channel沒有套件, 這時我們就必須從一個品質及聲譽良好的 channel 尋求協助，像是 conda-forge 就是資料科學團隊除了 main 以外的第二選擇，輸入 conda install --channel ORGANIZATION PACKAGE_NAME 可以從指定的 channel 安裝套件。
+
 1. 使用方式：
     a. Conda 套件的更新(可以將 conda 版本更新, 更新套件管理器):
     --> conda update conda
     
-    a-1. Conda 更新完整 Anaconda(目前還不是很清楚跟上面的差異)
-    --> conda update anaconda 
+    a-1. Conda 更新指定的套件
+    --> conda update package_name 
     
     b. conda 安裝新的套件
     --> conda install [套件名稱_1] [套件名稱_2] ... ... [套件名稱_N]
-    --> EX: conda install vim git
+     --> EX: conda install vim git
+     --> EX: conda install --channel conda-forge youtube-dl (指定channel)
 
     c. conda 移除套件:
     --> conda uninstall [套件名稱_1] [套件名稱_2] ... ... [套件名稱_N]
@@ -22,7 +25,10 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
 
     d. conda 套件搜尋:
     --> conda search [套件名稱]
-    --> EX: conda search git            # 搜尋 git 相關套件﹙只要符合 git 文字就會顯示﹚
+     --> EX: conda search git            # 搜尋 git 相關套件﹙只要符合 git 文字就會顯示﹚
+     d-1. conda 套件搜尋指定的channel
+     --> conda search --channel channel_name package_name
+     --> conda search --channel conda-forge youtube-dl
 
     e. conda 查看已安裝的套件清單
     --> conda list
@@ -37,27 +43,28 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
     --> EX: conda deactivate
 
     i. Conda 刪除虛擬環境中某個package(這時候在指定的環境裡)
-    --> conda remove [package_name]
+    --> conda remove package_name
     --> EX: conda remove numpy
     
     j. condo 刪除某虛擬環境中某個package    
-    --> conda remove --name [env_name] [package_name]
+    --> conda remove --name env_name package_name
     --> EX: conda remove --name myenv numpy
 
     k. conda 移除指定工作環境(記得在之前先以 
        conda deactivate 指令回到預設的 base 工作環境再進行移除作業。)
-    --> conda remove --name [env_name] --all
+    --> conda remove --name env_name --all
     --> EX: conda remove --name myenv --all
 
     l. Continue
 
 2. 開一個新的 Python 版本的虛擬環境
     a. 可以建立出乾淨、極簡且資源隔絕的工作環境
-    --> conda create --name [env_name] python=MAIN.MINOR.PATCH
-    --> EX: conda create --name py36 python=3.6
+    --> conda create --name env_name python=MAIN.MINOR.PATCH
+     --> EX: conda create --name py36 python=3.6
+     --> EX: conda create -n tf python=3.7 anaconda
     
     b. 切換至指定工作環境
-    --> conda/source activate [env_name]
+    --> conda/source activate env_name
      --> EX: source activate py36
      --> EX: conda activate py36
      
