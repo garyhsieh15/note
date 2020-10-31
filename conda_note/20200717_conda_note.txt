@@ -1,4 +1,4 @@
-﻿Conda operator manual
+Conda operator manual
 
 conda命令是管理在安裝不同package時的主要介面，使用conda時，
 你可以進行建立(create)、輸出(export)、列表(list)、移除(remove)和
@@ -53,7 +53,8 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
     k. conda 移除指定工作環境(記得在之前先以 
        conda deactivate 指令回到預設的 base 工作環境再進行移除作業。)
     --> conda remove --name env_name --all
-    --> EX: conda remove --name myenv --all
+     --> EX: conda remove --name myenv --all
+     --> EX: conda env remove --name myenv
 
     l. Continue
 
