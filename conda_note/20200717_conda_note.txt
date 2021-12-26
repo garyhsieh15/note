@@ -10,14 +10,13 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
 1. 使用方式：
     a. Conda 套件的更新(可以將 conda 版本更新, 更新套件管理器):
     --> conda update conda
-    
-    a-1. Conda 更新指定的套件
-    --> conda update package_name 
+      a-1. Conda 更新指定的套件
+      --> conda update package_name 
     
     b. conda 安裝新的套件
     --> conda install [套件名稱_1] [套件名稱_2] ... ... [套件名稱_N]
-     --> EX: conda install vim git
-     --> EX: conda install --channel conda-forge youtube-dl (指定channel)
+    --> EX: conda install vim git
+    --> EX: conda install --channel conda-forge youtube-dl (指定channel)
 
     c. conda 移除套件:
     --> conda uninstall [套件名稱_1] [套件名稱_2] ... ... [套件名稱_N]
@@ -25,10 +24,10 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
 
     d. conda 套件搜尋:
     --> conda search [套件名稱]
-     --> EX: conda search git            # 搜尋 git 相關套件﹙只要符合 git 文字就會顯示﹚
-     d-1. conda 套件搜尋指定的channel
-     --> conda search --channel channel_name package_name
-     --> conda search --channel conda-forge youtube-dl
+    --> EX: conda search git            # 搜尋 git 相關套件﹙只要符合 git 文字就會顯示﹚
+      d-1. conda 套件搜尋指定的channel
+      --> conda search --channel channel_name package_name
+      --> conda search --channel conda-forge youtube-dl
 
     e. conda 查看已安裝的套件清單
     --> conda list
@@ -53,24 +52,34 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
     k. conda 移除指定工作環境(記得在之前先以 
        conda deactivate 指令回到預設的 base 工作環境再進行移除作業。)
     --> conda remove --name env_name --all
-     --> EX: conda remove --name myenv --all
-     --> EX: conda env remove --name myenv
+    --> EX: conda remove --name myenv --all
+    --> EX: conda env remove --name myenv
 
-    l. Continue
+    l. conda 查詢目前有哪一些channel
+    --> EX: conda config --show channels
+
+    m. conda 新增加channel
+    --> conda config --add channels ch_name
+    --> EX: conda config --add channels conda-forge
+
+    n. conda 移除channel
+    --> conda config --remove channels ch_name
+    --> EX: conda config --remove channels conda-forge
+ 
+    o. Continue
 
 2. 開一個新的 Python 版本的虛擬環境
     a. 可以建立出乾淨、極簡且資源隔絕的工作環境
     --> conda create --name env_name python=MAIN.MINOR.PATCH
-     --> EX: conda create --name py36 python=3.6
-     --> EX: conda create -n tf python=3.7 anaconda
+    --> EX: conda create --name py36 python=3.6
+    --> EX: conda create -n tf python=3.7 anaconda
     
     b. 切換至指定工作環境
     --> conda/source activate env_name
-     --> EX: source activate py36
-     --> EX: conda activate py36
-     
-     b-1. 切換至base工作環境
---> conda deactivate  
+    --> EX: source activate py36
+    --> EX: conda activate py36
+      b-1. 切換至base工作環境
+      --> conda deactivate  
 
     c. 看安裝幾個虛擬環境
     --> EX: conda env list
