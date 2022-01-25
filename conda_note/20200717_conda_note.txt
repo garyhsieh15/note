@@ -5,7 +5,8 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
 更新(update)環境於不同Python版本及Packages，同時也可以分享你的虛擬環境。
 接下來筆者將針對conda如何建立及管理虛擬環境。
 
-若主要的channel沒有套件, 這時我們就必須從一個品質及聲譽良好的 channel 尋求協助，像是 conda-forge 就是資料科學團隊除了 main 以外的第二選擇，輸入 conda install --channel ORGANIZATION PACKAGE_NAME 可以從指定的 channel 安裝套件。
+若主要的channel沒有套件, 這時我們就必須從一個品質及聲譽良好的 channel 尋求協助，像是 conda-forge 就是資料科學團隊除了 main 以外的第二選擇，
+輸入 conda install --channel ORGANIZATION PACKAGE_NAME 可以從指定的 channel 安裝套件。
 
 1. 使用方式：
     a. Conda 套件的更新(可以將 conda 版本更新, 更新套件管理器):
@@ -72,7 +73,7 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
     a. 可以建立出乾淨、極簡且資源隔絕的工作環境
     --> conda create --name env_name python=MAIN.MINOR.PATCH
     --> EX: conda create --name py36 python=3.6
-    --> EX: conda create -n tf python=3.7 anaconda
+    --> EX: conda create -n tf python=3.7
     
     b. 切換至指定工作環境
     --> conda/source activate env_name
@@ -96,5 +97,11 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
      --> EX: conda env export –-name py36 –-file env_py36.yml
      b. 將匯入工作環境
      --> conda env create --name cloned_py36.yml --file env_py36.yml
-4. other
 
+4. 如何在 conda 的環境中，恰當地使用 pip：
+    Step1. 先安裝 brew 套件管理系統（For MacOS）。
+    Step2. 安裝 Anaconda 套件組。
+    Step3. 找 conda 管理套件裡的 pip，如果沒有就 conda install pip 。
+    Step4. 再使用 pip install new_module 或 pip install --upgrade <package>，絕對不要用 sudo pip install 會導致系統檔案被污染。
+
+5. other
