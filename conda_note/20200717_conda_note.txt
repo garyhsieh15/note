@@ -96,7 +96,7 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
      --> conda env export –-name env_name –-file export_env_name.yml
      --> EX: conda env export –-name py36 –-file env_py36.yml
      b. 將匯入工作環境
-     --> conda env create --name cloned_py36.yml --file env_py36.yml
+     --> conda env create --name py36 --file env_py36.yml
 
 4. 如何在 conda 的環境中，恰當地使用 pip：
     Step1. 先安裝 brew 套件管理系統（For MacOS）。
