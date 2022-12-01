@@ -52,9 +52,8 @@ conda命令是管理在安裝不同package時的主要介面，使用conda時，
 
     k. conda 移除指定工作環境(記得在之前先以 
        conda deactivate 指令回到預設的 base 工作環境再進行移除作業。)
-    --> conda remove --name env_name --all
-    --> EX: conda remove --name myenv --all
-    --> EX: conda env remove --name myenv
+    --> conda env remove --name env_name
+    --> EX: conda env remove --name pyside6
 
     l. conda 查詢目前有哪一些channel
     --> EX: conda config --show channels
