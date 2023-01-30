@@ -36,7 +36,7 @@ brew uninstall <formula>       # 移除套件
 
 # update local packages
 brew outdated                      # find out what is outdated
-brew update                        # 更新 brew 本身和 formula
+brew update                        # 更新 brew 本身和套件清單
 brew upgrade                       # 更新 brew 內的所有套件
 brew upgrade <formula>             # 更新 brew 內的特定套件
 
